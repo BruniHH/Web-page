@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'UndertaleBattle';
+    src: url('Fonts/Undertale-Battle-Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'UndertaleBattle', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Главный контейнер */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px; /* чтобы контент не прятался под хедером */
+}
+
+/* Блок с фоном */
+.gif-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('back/toriel-house.gif') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: opacity(0.89);
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(14, 14, 14);
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    height: 20%;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    height: 40px;
+    margin-left: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* MAIN CONTENT */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10%;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+
+.text-container {
+    font-size: larger;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10%;
+    border-radius: 10px;
+    margin-left: 10px; /* небольшой отступ слева */
+    text-align: left;
+    max-width: 1000px;
+    color: rgb(29, 29, 29);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: -0%;
+}
+
+.text-container h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.text-container p {
+    font-size: 30px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.pixel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    background-color: #f4f4f4;
+    box-shadow: 0 0 0 4px rgb(255, 255, 255);
+}
+
+.pixel-table th,
+.pixel-table td {
+    border: 2px solid rgb(115, 76, 48);
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #fce2af;
+}
+
+.pixel-table th {
+    background-color: #e09d3e;
+    color: #000;
+}
+
+.pixel-table td img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid black;
+    image-rendering: pixelated;
+    border-radius: 8px;
+}
+
+.pixel-table tr:hover {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+.characters h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: rgb(22, 22, 26);
+    color: #ffffff;
+    padding: 20px 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(14, 14, 14, 0.8);
+    font-size: 14px;
+}
+
+/* ADAPTIVE */
+@media (max-width: 868px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav {
+        justify-content: space-between;
+        position: relative;
+        padding: 5px 20px;
+    }
+
+    /* Стили для скрытого меню */
+    .nav-links {
+        z-index: 10; /* Меню будет выше облаков */
+        flex-direction: column;
+        width: 200px; /* Фиксированная ширина для меню */
+        gap: 10px;
+        display: none; /* Скрыто по умолчанию */
+        position: absolute;
+        top: 60px; /* Отступ сверху */
+        right: 0;
+        background-color: rgba(14, 14, 14, 0.8);
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для меню */
+        align-items: center; /* Центрирование элементов по горизонтали */
+    }
+
+    /* Центрирование элементов внутри меню */
+    .nav-links li {
+        text-align: center; /* Центрирование текста внутри каждого элемента списка */
+    }
+
+    /* Показываем меню при активации чекбокса */
+    .nav-toggle:checked + .nav-toggle-label + .nav-links {
+        display: flex;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        margin-left: auto; /* Перемещаем кнопку вправо */
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .content button {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        font-size: 14px;
+    }
+}

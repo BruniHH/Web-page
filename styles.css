@@ -1,0 +1,226 @@
+
+@font-face {
+    font-family: 'UndertaleBattle';
+    src: url('Fonts/Undertale-Battle-Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    font-family: 'UndertaleBattle';
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gif-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('back/water.gif') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: opacity(0.9);
+}
+
+/*HEADER*/
+
+header {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 20px;
+    background-color: rgba(14, 14, 14, 0.8);
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-links li {
+    z-index: 10;
+    margin: 0;
+}
+
+.nav-links li a {
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff; 
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/*MAIN*/
+
+.content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1; 
+}
+
+h1, h2 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+/*Footer*/
+
+footer {
+    background-color: rgb(22, 22, 26);
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+/* Стили для контента футера */
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Распределение элементов по ширине */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для нижней части футера */
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(14, 14, 14, 0.8);
+    font-size: 14px;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 868px) {
+    .footer-content {
+        flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+/*Adaptive f*/
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav {
+        justify-content: space-between;
+        position: relative;
+        padding: 5px 20px;
+    }
+
+    /* Стили для скрытого меню */
+    .nav-links {
+        z-index: 10; /* Меню будет выше облаков */
+        flex-direction: column;
+        width: 200px; /* Фиксированная ширина для меню */
+        gap: 10px;
+        display: none; /* Скрыто по умолчанию */
+        position: absolute;
+        top: 60px; /* Отступ сверху */
+        right: 0;
+        background-color: rgba(14, 14, 14, 0.8);
+        padding: 10px;
+        align-items: center; 
+    }
+
+    /* Центрирование элементов внутри меню */
+    .nav-links li {
+        text-align: center; /* Центрирование текста внутри каждого элемента списка */
+    }
+
+    .nav-toggle:checked + .nav-toggle-label + .nav-links {
+        display: flex;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        margin-left: auto; /* Перемещаем кнопку вправо */
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
